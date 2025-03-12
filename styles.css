@@ -8,20 +8,9 @@
 
 body {
     display: flex;
+    background-color: #f0f2f5;
     min-height: 100vh;
     flex-direction: row;
-    background-color: #f0f2f5;
-}
-
-/* Common Color Variables */
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --highlight-color: #1abc9c;
-    --hover-color: #16a085;
-    --light-bg: #ecf0f1;
-    --text-color: #7f8c8d;
-    --white-color: #ffffff;
 }
 
 /* Anchor tag styling */
@@ -34,8 +23,8 @@ a {
 .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: #2c3e50;
+    color: white;
     padding: 20px;
     position: fixed;
     transition: width 0.3s ease;
@@ -46,7 +35,7 @@ a {
     margin-bottom: 30px;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--light-bg);
+    color: #ecf0f1;
 }
 
 .sidebar ul {
@@ -61,17 +50,17 @@ a {
 }
 
 .sidebar ul li a {
-    color: var(--white-color);
+    color: white;
     display: block;
     font-size: 1.2rem;
 }
 
 .sidebar ul li:hover {
-    background-color: var(--secondary-color);
+    background-color: #34495e;
 }
 
 .sidebar ul li a:hover {
-    color: var(--highlight-color);
+    color: #1abc9c;
 }
 
 /* Main Content */
@@ -80,13 +69,13 @@ a {
     width: calc(100% - 250px);
     padding: 20px;
     transition: margin-left 0.3s ease;
-    background-color: var(--white-color);
+    background-color: #ffffff;
     min-height: 100vh;
 }
 
 .main-content h1 {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: #2c3e50;
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -94,12 +83,12 @@ a {
 .main-content p {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: var(--text-color);
+    color: #7f8c8d;
 }
 
 button {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: #2c3e50;
+    color: white;
     border: none;
     padding: 12px 20px;
     border-radius: 5px;
@@ -109,11 +98,11 @@ button {
 }
 
 button:hover {
-    background-color: var(--highlight-color);
+    background-color: #1abc9c;
 }
 
 button:active {
-    background-color: var(--hover-color);
+    background-color: #16a085;
 }
 
 /* Responsive Design for Sidebar and Main Content */
@@ -163,6 +152,57 @@ button:active {
     }
 }
 
+/* Video Container for Homepage */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Animation for Video Overlay */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Doctor Grid for Consult Page */
 .doctor-grid {
     display: grid;
@@ -172,7 +212,7 @@ button:active {
 }
 
 .doctor-card {
-    background: var(--white-color);
+    background: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -201,12 +241,12 @@ button:active {
 .doctor-card h3 {
     font-size: 1.2rem;
     margin: 10px 0;
-    color: var(--primary-color);
+    color: #34495e;
 }
 
 .doctor-card p {
     font-size: 1rem;
-    color: var(--text-color);
+    color: #7f8c8d;
 }
 
 /* Form Styling */
@@ -217,7 +257,7 @@ form {
     margin-top: 20px;
 }
 
-select, textarea, input[type="text"], input[type="email"], input[type="password"] {
+select, textarea {
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;
@@ -225,36 +265,51 @@ select, textarea, input[type="text"], input[type="email"], input[type="password"
     transition: border-color 0.3s ease;
 }
 
-select:focus, textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    border-color: var(--primary-color);
+select:focus, textarea:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
+/* Input Field Styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #2c3e50;
     outline: none;
 }
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: #2c3e50;
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
 footer p {
     font-size: 1rem;
-    color: var(--light-bg);
+    color: #ecf0f1;
 }
 
 footer a {
-    color: var(--highlight-color);
+    color: #1abc9c;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 footer a:hover {
-    color: var(--hover-color);
+    color: #16a085;
 }
 
 /* Style for active page link */
 .sidebar a.active {
-    color: var(--highlight-color);
-    font-weight: bold;
+    color: #1abc9c;
+    font-weight: bold;  
 }
