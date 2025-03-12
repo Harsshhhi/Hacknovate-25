@@ -13,6 +13,7 @@ body {
     flex-direction: row;
 }
 
+/* Anchor tag styling */
 a {
     text-decoration: none;
     color: inherit;
@@ -34,6 +35,7 @@ a {
     margin-bottom: 30px;
     font-size: 1.8rem;
     font-weight: 600;
+    color: #ecf0f1;
 }
 
 .sidebar ul {
@@ -67,12 +69,15 @@ a {
     width: calc(100% - 250px);
     padding: 20px;
     transition: margin-left 0.3s ease;
+    background-color: #ffffff;
+    min-height: 100vh;
 }
 
 .main-content h1 {
     font-size: 2.5rem;
     color: #2c3e50;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .main-content p {
@@ -263,4 +268,56 @@ select, textarea {
 select:focus, textarea:focus {
     border-color: #2c3e50;
     outline: none;
+}
+
+/* Input Field Styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #ecf0f1;
+}
+
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #16a085;
+}
+
+
+
+
+
+
+
+
+
+/* Style for active page link */
+.sidebar a.active {
+    color: #1abc9c;
+    font-weight: bold;  /* Make the text bold */
 }
