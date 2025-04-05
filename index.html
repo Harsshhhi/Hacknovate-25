@@ -4,8 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Support | MindCare</title>
+    <title>Login | MindCare</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        .sidebar {
+            color: white;
+            width: 250px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo h2 {
+            font-size: 28px;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        .main-content form {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content input {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .main-content button {
+            padding: 12px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .main-content button:hover {
+            background-color: #16a085;
+        }
+
+        .main-content p {
+            margin-top: 20px;
+        }
+
+        .main-content a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,28 +77,27 @@
         <div class="logo">
             <h2>MindCare</h2>
         </div>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="quiz.html">Mental Health Quiz</a></li>
-            <li><a href="chatbot.html">AI Chatbot</a></li>
-            <li><a href="mood.html">Daily Mood Tracker</a></li>
-            <li><a href="consult.html">Consult a Doctor</a></li>
-        </ul>
     </div>
 
     <div class="main-content">
-        <div class="video-container">
-            <video autoplay muted loop id="bg-video">
-                <source src="mental_health.mp4" type="video/mp4">
-            </video>
-            <div class="overlay">
-                <h1>Welcome to MindCare</h1>
-                <p>Your mental health matters. We are here to help.</p>
-                <a href="consult.html" class="cta-btn">Consult a Doctor</a>
-            </div>
-        </div>
+        <h1>Login to MindCare</h1>
+        <p>Welcome back! Please login to continue.</p>
+
+        <form id="loginForm">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="register.html">Sign up</a></p>
     </div>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            window.location.href = "home.html"; 
+        });
+    </script>
 </body>
 
 </html>
