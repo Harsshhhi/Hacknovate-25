@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Quiz</title>
+    <title>Mental Health Quiz | MindCare</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="sidebar">
         <h2>MindCare</h2>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="quiz.html" class="active">Mental Health Quiz</a></li>
             <li><a href="chatbot.html">AI Chatbot</a></li>
             <li><a href="mood.html">Daily Mood Tracker</a></li>
@@ -20,85 +20,23 @@
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="main-content quiz-page">
         <h1>Mental Health Quiz</h1>
-        <p>Answer the following questions to evaluate your mental well-being.</p>
+        <p class="quiz-intro">Answer the following questions to evaluate your mental well-being. Your responses are confidential.</p>
 
         <form id="quizForm">
-            <!-- Question 1 -->
-            <div class="question">
-                <p>1. How often do you feel anxious or stressed?</p>
-                <input type="radio" name="q1" value="often"> Often<br>
-                <input type="radio" name="q1" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q1" value="rarely"> Rarely<br>
-                <input type="radio" name="q1" value="never"> Never<br>
+            <!-- Questions Container -->
+            <div id="questions-container">
+                <!-- JS will populate questions here -->
             </div>
 
-            <!-- Question 2 -->
-            <div class="question">
-                <p>2. Do you have trouble falling or staying asleep?</p>
-                <input type="radio" name="q2" value="often"> Often<br>
-                <input type="radio" name="q2" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q2" value="rarely"> Rarely<br>
-                <input type="radio" name="q2" value="never"> Never<br>
+            <div class="quiz-buttons">
+                <button type="submit" class="submit-btn">Submit Quiz</button>
+                <button type="reset" class="reset-btn">Reset</button>
             </div>
-
-            <!-- Question 3 -->
-            <div class="question">
-                <p>3. Do you feel emotionally drained after social interactions?</p>
-                <input type="radio" name="q3" value="often"> Often<br>
-                <input type="radio" name="q3" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q3" value="rarely"> Rarely<br>
-                <input type="radio" name="q3" value="never"> Never<br>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="question">
-                <p>4. Do you experience frequent mood swings or irritability?</p>
-                <input type="radio" name="q4" value="often"> Often<br>
-                <input type="radio" name="q4" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q4" value="rarely"> Rarely<br>
-                <input type="radio" name="q4" value="never"> Never<br>
-            </div>
-
-            <!-- Question 5 -->
-            <div class="question">
-                <p>5. Do you feel overwhelmed by daily tasks or responsibilities?</p>
-                <input type="radio" name="q5" value="often"> Often<br>
-                <input type="radio" name="q5" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q5" value="rarely"> Rarely<br>
-                <input type="radio" name="q5" value="never"> Never<br>
-            </div>
-
-            <!-- Question 6 -->
-            <div class="question">
-                <p>6. Do you feel a lack of motivation to engage in activities you once enjoyed?</p>
-                <input type="radio" name="q6" value="often"> Often<br>
-                <input type="radio" name="q6" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q6" value="rarely"> Rarely<br>
-                <input type="radio" name="q6" value="never"> Never<br>
-            </div>
-
-            <!-- Question 7 -->
-            <div class="question">
-                <p>7. Do you often feel like you are unable to cope with stress or challenges?</p>
-                <input type="radio" name="q7" value="often"> Often<br>
-                <input type="radio" name="q7" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q7" value="rarely"> Rarely<br>
-                <input type="radio" name="q7" value="never"> Never<br>
-            </div>
-
-            <!-- Question 8 -->
-            <div class="question">
-                <p>8. Do you find it hard to concentrate or focus on tasks?</p>
-                <input type="radio" name="q8" value="often"> Often<br>
-                <input type="radio" name="q8" value="sometimes"> Sometimes<br>
-                <input type="radio" name="q8" value="rarely"> Rarely<br>
-                <input type="radio" name="q8" value="never"> Never<br>
-            </div>
-
-            <button type="submit">Submit Quiz</button>
         </form>
+
+        <div id="quiz-result" class="quiz-result"></div>
     </div>
 
     <script src="quiz.js"></script>

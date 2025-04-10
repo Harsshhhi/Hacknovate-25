@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Mood Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Mood Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="sidebar">
-        <h2>MindCare</h2>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="quiz.html">Mental Health Quiz</a></li>
-            <li><a href="chatbot.html">AI Chatbot</a></li>
-            <li><a href="mood.html" class="active">Daily Mood Tracker</a></li>
-            <li><a href="consult.html">Consult a Doctor</a></li>
-        </ul>
-    </div>
+  <div class="sidebar">
+    <h2>MindCare</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="quiz.html">Mental Health Quiz</a></li>
+      <li><a href="chatbot.html">AI Chatbot</a></li>
+      <li><a href="mood.html" class="active">Daily Mood Tracker</a></li>
+      <li><a href="consult.html">Consult a Doctor</a></li>
+    </ul>
+  </div>
 
-    <div class="main-content">
-        <h1>Daily Mood Tracker</h1>
-        <p>Track your mood daily to understand your emotional well-being.</p>
-        
-        <form id="mood-form">
-            <label for="mood">How are you feeling today?</label>
-            <select id="mood">
-                <option value="happy">😊 Happy</option>
-                <option value="neutral">😐 Neutral</option>
-                <option value="sad">😔 Sad</option>
-                <option value="stressed">😖 Stressed</option>
-                <option value="anxious">😰 Anxious</option>
-                <option value="excited">🤩 Excited</option>
-            </select>
+  <div class="main-content mood-tracker">
+    <h1>📝 Daily Mood Tracker</h1>
+    <p>Track your mood daily to understand your emotional well-being.</p>
 
-            <label for="notes">Notes (Optional):</label>
-            <textarea id="notes" rows="4" placeholder="Write your thoughts..."></textarea>
+    <form id="mood-form">
+      <label for="mood">How are you feeling today?</label>
+      <select id="mood">
+        <option value="😊 Happy">😊 Happy</option>
+        <option value="😐 Neutral">😐 Neutral</option>
+        <option value="😔 Sad">😔 Sad</option>
+        <option value="😖 Stressed">😖 Stressed</option>
+        <option value="😰 Anxious">😰 Anxious</option>
+        <option value="🤩 Excited">🤩 Excited</option>
+      </select>
 
-            <button type="submit">Save Mood</button>
-        </form>
+      <label for="notes">Notes (Optional):</label>
+      <textarea id="notes" rows="4" placeholder="Write your thoughts..."></textarea>
 
-        <h2>Your Mood History</h2>
-        <ul id="mood-history"></ul>
-    </div>
+      <button type="submit">Save Mood</button>
+    </form>
 
-    <script>
-        document.getElementById("mood-form").addEventListener("submit", function(event) {
-            event.preventDefault();
+    <div id="suggestion-box" class="suggestion-box"></div>
 
-            let mood = document.getElementById("mood").value;
-            let notes = document.getElementById("notes").value;
-            let date = new Date().toLocaleDateString();
+    <h2>Your Mood History</h2>
+    <ul id="mood-history" class="mood-history-list"></ul>
+  </div>
 
-            let entry = `<li><strong>${date}</strong>: ${mood} - ${notes ? notes : "No additional notes"}</li>`;
-            
-            document.getElementById("mood-history").innerHTML += entry;
-
-            document.getElementById("mood-form").reset();
-        });
-    </script>
+  <script src="mood.js"></script>
 </body>
 </html>
