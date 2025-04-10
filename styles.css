@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -41,10 +41,9 @@ body {
 .sidebar ul {
     list-style: none;
     padding: 0;
-}
-
-.sidebar ul li {
-    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .sidebar ul li a {
@@ -70,6 +69,7 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 0;
+    padding: 20px 40px;
 }
 
 /* Video Section */
@@ -133,7 +133,7 @@ body {
 
 /* Services Section */
 .services-section {
-    background: #ffffff;
+    background: #fff;
     padding: 60px 40px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -216,6 +216,7 @@ body {
     margin-top: 30px;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .submit-btn, .reset-btn {
@@ -505,11 +506,7 @@ body {
         height: auto;
         padding: 10px 0;
         position: relative;
-    }
-
-    .logo h2 {
-        margin: 0 10px;
-        font-size: 24px;
+        overflow-x: auto;
     }
 
     .sidebar ul {
@@ -519,12 +516,15 @@ body {
         margin-top: 10px;
     }
 
-    .sidebar ul li {
-        margin: 0;
+    .main-content {
+        padding: 20px;
     }
 
-    .main-content {
-        padding: 10px;
+    .chatbot-page,
+    .quiz-page,
+    .consult-page,
+    .mood-tracker {
+        padding: 20px;
     }
 
     .video-container {
@@ -533,14 +533,11 @@ body {
 
     .overlay {
         padding: 25px;
+        width: 95%;
     }
 
     .overlay h1 {
         font-size: 1.8rem;
-    }
-
-    .services-section {
-        padding: 40px 20px;
     }
 }
 
@@ -566,7 +563,20 @@ body {
         font-size: 18px;
     }
 
-    .service p {
+    .service p,
+    #mood-form textarea,
+    #mood-form select {
+        font-size: 14px;
+    }
+
+    .doctor-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .doctor-card h3,
+    .doctor-card .specialty,
+    .doctor-card .phone {
         font-size: 14px;
     }
 }
